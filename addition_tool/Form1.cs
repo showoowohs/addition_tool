@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
             float result = 0;
             foreach (string s in words)
             {
-                // chang , to .
+                // delete , 
                 string s_tmp = translate_comma(s);
 
                 // chang to float
@@ -62,10 +62,10 @@ namespace WindowsFormsApplication1
             
             //MessageBox.Show(str);
             //Regex NumberPattern = new Regex("[^0-9.-]");
-            Regex NumberPattern = new Regex(@"^[a-zA-Z]+$");
+            Regex NumberPattern = new Regex(@"^[^0-9\num.-]");
             if (NumberPattern.IsMatch(str))
                 return 0;
-            //if (NumberPattern.IsMatch(str) || String.IsNullOrEmpty(str) || String.IsNullOrWhiteSpace(str))
+            
             if (String.IsNullOrEmpty(str) || String.IsNullOrWhiteSpace(str))
                 return 0;
             float f_num = float.Parse(str);
