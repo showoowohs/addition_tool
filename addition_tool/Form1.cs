@@ -33,6 +33,8 @@ namespace WindowsFormsApplication1
             {
                 // delete , 
                 string s_tmp = translate_comma(s);
+                // delete blank 
+                s_tmp = translate_blank(s);
 
                 // chang to float
                 float f_tmp = string_to_float(s_tmp);
@@ -55,6 +57,14 @@ namespace WindowsFormsApplication1
             //label2.Text = str;
             return str;
             
+        }
+
+        private string translate_blank(string str)
+        {
+            str = str.Replace(" ", "");
+            //label2.Text = str;
+            return str;
+
         }
 
         private float string_to_float(string str)
